@@ -195,8 +195,8 @@ main,
 
 .site-header{position:fixed;left:0;right:0;top:0;height:64px;background:rgba(5, 7, 20, 0.92);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:0 24px;z-index:100;box-shadow:0 8px 24px rgba(2,6,23,0.6)}
 .brand{font-weight:700}
-.nav{display:flex;gap:18px;align-items:center}
-.nav-link{color:#e6eef8;text-decoration:none;padding:8px 10px;border-radius:8px;font-size:18px;line-height:1}
+.nav{display:flex;gap:12px;align-items:center}
+.nav-link{color:#e6eef8;text-decoration:none;padding:6px 8px;border-radius:8px;font-size:17px;line-height:1;font-weight:700}
 .nav-link.active,.nav-link:hover{color:#22f7c5;background:rgba(34,247,197,0.1)}
 .nav-toggle{display:none;background:transparent;border:0;color:var(--muted);font-size:20px}
 
@@ -412,7 +412,8 @@ main,
 @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-10px)}100%{transform:translateY(0)}}
 
 .section{padding:80px 24px}
-#CONTACT.section{padding:25px 24px 30px}
+#CONTACT.section{padding:0 24px 30px;margin-top:-60px}
+#PROJECTS.section{padding-top:40px;padding-bottom:120px}
 .container{max-width:1100px;margin:0 auto}
 
 .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
@@ -431,9 +432,46 @@ main,
 /* Center and enlarge the About section title */
 #about .container h2{ text-align:center; margin-bottom:18px; font-size:36px }
 
-/* Make About, Stack, Tools titles larger + bold */
+/* Make About, Stack, Experience, Projects, Contact titles larger + bold */
+/* Base box style for section titles */
 #ABOUT\ Me h2,
 #Stack h2,
+#EXPERIENCE h2,
+#PROJECTS h2,
+#CONTACT h2 {
+  text-align: center;
+  margin-bottom: 18px;
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 24px rgba(2, 6, 23, 0.55);
+}
+
+/* Distinct colors per section */
+#ABOUT\ Me h2 {
+  background: linear-gradient(90deg, rgba(24, 90, 157, 0.9), rgba(0, 184, 212, 0.9), rgba(14, 116, 144, 0.9));
+}
+
+#Stack h2 {
+  background: linear-gradient(90deg, rgba(67, 56, 202, 0.9), rgba(99, 102, 241, 0.9), rgba(124, 58, 237, 0.9));
+}
+
+#EXPERIENCE h2 {
+  background: linear-gradient(90deg, rgba(139, 92, 246, 0.9), rgba(217, 70, 239, 0.9), rgba(236, 72, 153, 0.9));
+}
+
+#PROJECTS h2 {
+  background: linear-gradient(90deg, rgba(16, 185, 129, 0.9), rgba(34, 197, 94, 0.9), rgba(132, 204, 22, 0.9));
+}
+
+#CONTACT h2 {
+  background: linear-gradient(90deg, rgba(234, 88, 12, 0.9), rgba(239, 68, 68, 0.9), rgba(245, 158, 11, 0.9));
+}
+
+/* Keep tools title centered (no box requested) */
 #tools h2 {
   text-align: center;
   margin-bottom: 18px;
@@ -447,15 +485,56 @@ main,
   line-height: 1.7;
 }
 
-.docs-wrap{display:flex;gap:24px;flex-wrap:wrap;margin-top:18px}
+.docs-header{
+  display:grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items:center;
+  gap:16px;
+  padding:14px 18px;
+  margin:0 0 20px;
+  border-radius:16px;
+  background:linear-gradient(90deg,
+    rgba(91, 33, 182, 0.92) 0%,
+    rgba(147, 51, 234, 0.92) 25%,
+    rgba(236, 72, 153, 0.92) 50%,
+    rgba(249, 115, 22, 0.92) 75%,
+    rgba(234, 179, 8, 0.92) 100%
+  );
+  border:1px solid rgba(255,255,255,0.08);
+  box-shadow:0 14px 32px rgba(2,6,23,0.65);
+  backdrop-filter: blur(8px);
+}
+
+.docs-header h2{
+  margin:0;
+  text-align:center;
+  font-size:30px;
+  font-weight:800;
+  letter-spacing:0.4px;
+  text-shadow:0 6px 18px rgba(2,6,23,0.7);
+}
+
+.docs-header #docs-expand-all{
+  justify-self:start;
+}
+
+.docs-header #docs-collapse-all{
+  justify-self:end;
+}
+
+.docs-header .docs-action{
+  z-index:1;
+}
+
+.docs-wrap{display:flex;gap:24px;flex-wrap:wrap;margin-top:6px}
 .docs-column{flex:1;min-width:260px}
 .docs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px} 
 /* Oculta todas las tarjetas a partir de la 4 cuando está colapsado */
 .docs-grid.collapsed .doc-card:nth-child(n+4){display:none} 
 /* Necesario para el pseudo-elemento degradado */
 .docs-grid.collapsed{position:relative} 
-/* Degradado en la parte inferior para indicar más contenido */
-.docs-grid.collapsed::after{content:'';position:absolute;left:0;right:0;bottom:0;height:48px;background:linear-gradient(180deg, transparent, rgba(2,6,23,0.6));border-radius:0 0 12px 12px;pointer-events:none} 
+/* Quitar degradado inferior para evitar líneas oscuras */
+.docs-grid.collapsed::after{content:none} 
 /* Botones centrados verticalmente entre columnas */
 .docs-controls{display:flex;flex-direction:column;gap:8px;align-items:center;justify-content:flex-start;margin:6px 8px 0} 
 /* Estilos para botón de maximizar/minimizar (ahora no absolute) */
@@ -470,6 +549,7 @@ main,
 .doc-card h4{margin:6px 0}
 .doc-date{font-size:13px;color:var(--muted);margin:6px 0}
 .doc-link{display:inline-flex;margin-top:auto;width:100%;align-items:center;justify-content:center;color:#04233a;background:linear-gradient(90deg,#fff,#f3f4f6);padding:12px 16px;border-radius:10px;font-weight:700;font-size:16px;transition:transform .18s ease, box-shadow .18s ease;text-decoration:none}
+.docs-wrap a{text-decoration:none}
 .doc-link:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(3,16,34,0.35)}
 
 /* From Uiverse.io by Yaya12085 */
@@ -515,15 +595,139 @@ main,
 #docs .container h2{ text-align:center; margin-bottom:18px; font-size:36px }
 
 /* Style docs column subtitles */
-.docs-column h3{ font-size:28px; text-align:center; margin-bottom:16px }
+.docs-column h3{
+  font-size:28px;
+  text-align:center;
+  margin:0 0 16px;
+  padding:10px 14px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.08);
+  box-shadow:0 10px 24px rgba(2,6,23,0.55);
+  color:#ffffff;
+  text-shadow:0 4px 12px rgba(0,0,0,0.8), 0 0 2px rgba(0,0,0,0.95);
+  -webkit-text-stroke: 0.6px rgba(0,0,0,0.6);
+}
+
+/* Distinct colors for Certificados/Diplomas subtitles */
+.docs-column[data-which="certs"] h3{
+  background:linear-gradient(90deg,
+    rgba(16, 185, 129, 0.92) 0%,
+    rgba(34, 197, 94, 0.92) 30%,
+    rgba(132, 204, 22, 0.92) 60%,
+    rgba(250, 204, 21, 0.92) 100%
+  );
+}
+
+.docs-column[data-which="dips"] h3{
+  background:linear-gradient(90deg, rgba(190, 24, 93, 0.9), rgba(225, 29, 72, 0.9), rgba(249, 115, 22, 0.9));
+}
+
+@media (max-width: 900px) {
+  .docs-header{
+    grid-template-columns: 1fr;
+    gap:12px;
+    text-align:center;
+  }
+  .docs-header h2{
+    order: -1;
+    font-size:26px;
+  }
+  .docs-header #docs-expand-all,
+  .docs-header #docs-collapse-all{
+    justify-self:center;
+  }
+}
 
 /* Stack section styles (cards similar to attachment) */
-.stack-section .lead{max-width:900px;margin:0 auto 18px;text-align:center}
+.stack-section .lead{
+  max-width:900px;
+  margin:0 auto 18px;
+  text-align:center;
+  font-size:20px;
+  font-weight:700;
+  padding:10px 16px;
+  border-radius:12px;
+  color:#ffffff;
+  background:linear-gradient(90deg, rgba(2, 132, 199, 0.92), rgba(6, 182, 212, 0.92), rgba(16, 185, 129, 0.92));
+  border:1px solid rgba(255,255,255,0.08);
+  box-shadow:0 10px 24px rgba(2,6,23,0.55), 0 0 14px rgba(34,211,238,0.45);
+  text-shadow:0 2px 8px rgba(0,0,0,0.6);
+}
 .stack-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:22px}
 .stack-item{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;display:flex;align-items:center;gap:18px;box-shadow:0 10px 30px rgba(2,6,23,0.6)}
-.stack-icon{width:74px;height:74px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(90deg,#06b6d4,#3b82f6);color:#04233a;font-weight:800;font-size:20px;box-shadow:0 8px 24px rgba(6,182,212,0.08)}
+.stack-icon{
+  width:88px;
+  height:88px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(90deg,#06b6d4,#3b82f6);
+  color:#04233a;
+  font-weight:800;
+  font-size:14px;
+  line-height:1.1;
+  text-align:center;
+  padding:6px;
+  box-shadow:0 8px 24px rgba(6,182,212,0.08);
+}
 .stack-text h3{margin:0;font-size:18px}
 .stack-text p{margin:4px 0 0;color:var(--muted)}
+
+/* Shared section card (About/Stack/Experience) */
+.section-card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  border:1px solid rgba(110,231,183,0.12);
+  box-shadow:0 16px 40px rgba(2,6,23,0.55);
+  border-radius:16px;
+  padding:28px;
+}
+
+.section-card .lead{max-width:900px;margin:0 auto 18px;text-align:center}
+
+/* Experience section styles */
+.experience-section .lead{
+  max-width:900px;
+  margin:0 auto 22px;
+  text-align:center;
+  font-size:22px;
+  font-weight:700;
+  padding:12px 18px;
+  border-radius:12px;
+  color:#ffffff;
+  background:linear-gradient(90deg, rgba(14, 116, 144, 0.9), rgba(59, 130, 246, 0.9), rgba(99, 102, 241, 0.9));
+  border:1px solid rgba(255,255,255,0.08);
+  box-shadow:
+    0 12px 28px rgba(2,6,23,0.55),
+    0 0 12px rgba(56, 189, 248, 0.55),
+    0 0 26px rgba(99, 102, 241, 0.45);
+  text-shadow:0 2px 8px rgba(0,0,0,0.6);
+}
+.experience-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:22px}
+.experience-item{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding:18px;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(2,6,23,0.6);
+}
+.experience-item:nth-child(1){
+  background:linear-gradient(135deg, rgba(30, 64, 175, 0.85), rgba(37, 99, 235, 0.55));
+  box-shadow:0 12px 28px rgba(2,6,23,0.55), 0 0 18px rgba(59,130,246,0.45);
+}
+.experience-item:nth-child(2){
+  background:linear-gradient(135deg, rgba(88, 28, 135, 0.85), rgba(147, 51, 234, 0.55));
+  box-shadow:0 12px 28px rgba(2,6,23,0.55), 0 0 18px rgba(147,51,234,0.45);
+}
+.experience-item:nth-child(3){
+  background:linear-gradient(135deg, rgba(185, 28, 28, 0.85), rgba(239, 68, 68, 0.55));
+  box-shadow:0 12px 28px rgba(2,6,23,0.55), 0 0 18px rgba(239,68,68,0.45);
+}
+.experience-item:nth-child(4){
+  background:linear-gradient(135deg, rgba(15, 118, 110, 0.92), rgba(6, 78, 59, 0.92));
+  box-shadow:0 12px 28px rgba(2,6,23,0.6), 0 0 18px rgba(16,185,129,0.35);
+}
+.experience-item h3{margin:0 0 10px;font-size:22px}
+.experience-item .muted{font-size:16px;line-height:1.6}
 
 /* Tools small section */
 #tools .lead{max-width:880px;margin:0 auto;text-align:center}
@@ -550,9 +754,9 @@ main,
 .site-footer {
   background: linear-gradient(135deg, rgba(5, 7, 20, 0.95) 0%, rgba(15, 23, 36, 0.95) 100%);
   border-top: 1px solid rgba(110, 231, 183, 0.15);
-  padding: 48px 24px 24px;
+  padding: 64px 24px 24px;
   color: var(--muted);
-  margin-top: 80px;
+  margin-top: 0;
 }
 
 .footer-container {
@@ -1046,13 +1250,14 @@ body{
 /* From Uiverse.io by ilkhoeri - 3D Rotating Carousel */
 .wrapper {
   width: 100%;
-  height: 400px;
+  height: 460px;
   position: relative;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow: visible;
+  margin-top: -24px;
   margin-bottom: 40px;
 }
 
@@ -2134,10 +2339,15 @@ body{
 
 #CONTACT h2 {
   text-align: center;
+  margin-top: 0;
   margin-bottom: 18px;
   font-size: 48px;
   font-weight: 900;
   letter-spacing: 1px;
+}
+
+#CONTACT .container{
+  padding-top: 0;
 }
 
 @media (max-width: 700px) {

@@ -269,6 +269,7 @@
     { id: 'HOME', red: false, redAnim: false, video: 'Pikachu.mp4', showVideo: true },
     { id: 'ABOUT Me', red: false, redAnim: false, video: 'Charizard.mp4', showVideo: true },
     { id: 'Stack', red: true, redAnim: true, video: null, showVideo: false },
+    { id: 'EXPERIENCE', red: true, redAnim: true, video: null, showVideo: false },
     { id: 'Diplomas and Certificates', red: true, redAnim: true, video: 'Blastoise.mp4', showVideo: true },
     { id: 'PROJECTS', red: true, redAnim: false, video: 'Venasaur.mp4', showVideo: true },
     { id: 'CONTACT', red: true, redAnim: false, video: null, showVideo: false }
