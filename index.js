@@ -55,16 +55,26 @@
   const modalClose = modal && modal.querySelector('.modal-close');
 
   const projects = {
-    1:{ title:'Interfaz Dinámica', desc:'Proyecto con animaciones CSS y JS para mejorar la experiencia del usuario. Incluye microinteracciones fluidas y transiciones suaves.', color:'142, 249, 252', link:'#' },
-    2:{ title:'Landing Optimizada', desc:'Landing page con enfoque en performance y tasas de conversión. Optimizada para móvil con CTA claros.', color:'110, 231, 183', link:'#' },
-    3:{ title:'App de Ejemplo', desc:'Single Page Application (SPA) con gestión de estado compartido y animaciones suaves.', color:'252, 208, 142', link:'#' },
-    4:{ title:'E-commerce Store', desc:'Plataforma de tienda online con carrito de compras, sistema de pago integrado y gestión de inventario.', color:'252, 142, 142', link:'#' },
-    5:{ title:'Dashboard Analytics', desc:'Panel de análisis en tiempo real con gráficos interactivos, mapas de calor y reportes personalizados.', color:'252, 142, 239', link:'#' },
-    6:{ title:'Chat Application', desc:'Aplicación de mensajería instantánea con soporte para grupos, notificaciones y sincronización en vivo.', color:'204, 142, 252', link:'#' },
+    1:{ title:'Interfaz Dinámica', desc:'Proyecto con animaciones CSS y JS para mejorar la experiencia del usuario. Incluye microinteracciones fluidas y transiciones suaves.', color:'142, 249, 252', link:'https://github.com/AlfonsoCha1/PROYECTOS' },
+    2:{ title:'Landing Optimizada', desc:'Landing page con enfoque en performance y tasas de conversión. Optimizada para móvil con CTA claros.', color:'110, 231, 183', link:'https://github.com/AlfonsoCha1/PROYECTO-INTERLIGENCIA-ARTIFICIAL' },
+    3:{ title:'App de Ejemplo', desc:'Single Page Application (SPA) con gestión de estado compartido y animaciones suaves.', color:'252, 208, 142', link:'https://github.com/AlfonsoCha1/Java' },
+    4:{ title:'E-commerce Store', desc:'Plataforma de tienda online con carrito de compras, sistema de pago integrado y gestión de inventario.', color:'252, 142, 142', link:'https://github.com/AlfonsoCha1/ESCUELA' },
+    5:{ title:'Dashboard Analytics', desc:'Panel de análisis en tiempo real con gráficos interactivos, mapas de calor y reportes personalizados.', color:'252, 142, 239', link:'https://github.com/AlfonsoCha1/SUMA' },
+    6:{ title:'Chat Application', desc:'Aplicación de mensajería instantánea con soporte para grupos, notificaciones y sincronización en vivo.', color:'204, 142, 252', link:'https://github.com/AlfonsoCha1/Smucky_By_CHAVAMON' },
     7:{ title:'Portfolio Personal', desc:'Sitio web personal con galería de proyectos, blog integrado y formulario de contacto optimizado.', color:'142, 202, 252', link:'#' },
     8:{ title:'Task Manager', desc:'Gestor de tareas colaborativo con asignación de roles, cronograma Gantt y seguimiento de progreso.', color:'173, 255, 47', link:'#' },
     9:{ title:'Video Streaming', desc:'Plataforma de streaming de video con reproductor personalizado, recomendaciones IA y comentarios en vivo.', color:'255, 165, 0', link:'#' },
-    10:{ title:'Social Network', desc:'Red social completa con perfiles, muro de actividades, notificaciones y sistema de mensajes privados.', color:'64, 224, 208', link:'#' }
+    10:{ title:'Social Network', desc:'Red social completa con perfiles, muro de actividades, notificaciones y sistema de mensajes privados.', color:'64, 224, 208', link:'#' },
+    11:{ title:'Proyecto 11', desc:'Proyecto en desarrollo. Agrega la descripción y el enlace cuando esté listo.', color:'255, 99, 132', link:'#' },
+    12:{ title:'Proyecto 12', desc:'Proyecto en desarrollo. Agrega la descripción y el enlace cuando esté listo.', color:'54, 162, 235', link:'#' },
+    13:{ title:'Proyecto 13', desc:'Proyecto en desarrollo. Agrega la descripción y el enlace cuando esté listo.', color:'255, 206, 86', link:'#' },
+    14:{ title:'Proyecto 14', desc:'Proyecto en desarrollo. Agrega la descripción y el enlace cuando esté listo.', color:'75, 192, 192', link:'#' },
+    15:{ title:'Proyecto 15', desc:'Proyecto en desarrollo. Agrega la descripción y el enlace cuando esté listo.', color:'153, 102, 255', link:'#' },
+    16:{ title:'Proyecto 16', desc:'Proyecto en desarrollo. Agrega la descripción y el enlace cuando esté listo.', color:'255, 159, 64', link:'#' },
+    17:{ title:'Proyecto 17', desc:'Proyecto en desarrollo. Agrega la descripción y el enlace cuando esté listo.', color:'99, 102, 241', link:'#' },
+    18:{ title:'Proyecto 18', desc:'Proyecto en desarrollo. Agrega la descripción y el enlace cuando esté listo.', color:'16, 185, 129', link:'#' },
+    19:{ title:'Proyecto 19', desc:'Proyecto en desarrollo. Agrega la descripción y el enlace cuando esté listo.', color:'244, 114, 182', link:'#' },
+    20:{ title:'Proyecto 20', desc:'Proyecto en desarrollo. Agrega la descripción y el enlace cuando esté listo.', color:'14, 165, 233', link:'#' }
   };
 
   // Carousel project cards click handler

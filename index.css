@@ -459,8 +459,8 @@ main,
 @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-10px)}100%{transform:translateY(0)}}
 
 .section{padding:80px 24px}
-#CONTACT.section{padding:0 24px 30px;margin-top:-60px}
-#PROJECTS.section{padding-top:40px;padding-bottom:120px}
+#CONTACT.section{padding:40px 24px 30px;margin-top:0}
+#PROJECTS.section{padding-top:20px;padding-bottom:120px}
 .container{max-width:1100px;margin:0 auto}
 
 .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
@@ -512,6 +512,10 @@ main,
 
 #PROJECTS h2 {
   background: linear-gradient(90deg, rgba(16, 185, 129, 0.9), rgba(34, 197, 94, 0.9), rgba(132, 204, 22, 0.9));
+  width: 100%;
+  display: block;
+  padding: 14px 20px;
+  margin-top: -6px;
 }
 
 #CONTACT h2 {
@@ -1436,14 +1440,14 @@ body{
   align-items: center;
   justify-content: center;
   overflow: visible;
-  margin-top: -24px;
+  margin-top: -60px;
   margin-bottom: 40px;
 }
 
 .inner {
-  --w: 120px;
-  --h: 180px;
-  --translateZ: calc((var(--w) + var(--h)) + 20px);
+  --w: 100px;
+  --h: 150px;
+  --translateZ: calc((var(--w) + var(--h)) + 110px);
   --rotateX: -15deg;
   --perspective: 1200px;
   position: absolute;
