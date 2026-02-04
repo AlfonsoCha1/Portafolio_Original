@@ -26,6 +26,10 @@ body{
   position: relative;
 }
 
+body.no-anim{
+  transition:none;
+}
+
 body.is-red{
   background:
     radial-gradient(900px 500px at 20% 20%, rgba(255,77,109,0.16), transparent 60%),
@@ -109,6 +113,11 @@ body.is-red{
 }
 .blob{width:560px;height:560px;}
 .orb{width:320px;height:320px;filter: blur(25px);opacity:0.5;animation: orbit 18s ease-in-out infinite;}
+
+body.no-anim .blob,
+body.no-anim .orb{
+  animation:none;
+}
 
 .blob--home{
   left:-140px; top:40px;
