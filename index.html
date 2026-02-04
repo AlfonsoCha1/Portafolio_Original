@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body class="no-anim">
+    <!-- Fondo animado y efectos visuales -->
     <!-- Background FX -->
     <div class="bg" aria-hidden="true">
       <div class="blob blob--home"></div>
@@ -18,6 +19,7 @@
       <div class="orb orb--red"></div>
       <div class="noise"></div>
     </div>
+    <!-- Contenedor de video Pokémon en pantalla completa -->
     <!-- Pokemon Video Container -->
     <div class="pokemon-video-container" id="pokemonVideoContainer" aria-hidden="true">
       <div class="video-overlay" id="videoOverlay"></div>
@@ -25,6 +27,7 @@
         <source src="Video_de_Pokemon/Pikachu.mp4" type="video/mp4">
       </video>
     </div>
+    <!-- Encabezado con navegación principal -->
     <!-- Header with Navigation -->
     <header class="site-header">
         <div class="brand">
@@ -54,6 +57,7 @@
         <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">☰</button>
     </header>
 
+    <!-- Menú lateral para móvil -->
     <!-- Mobile Sidebar Menu -->
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
     <aside class="sidebar-menu" id="sidebarMenu" aria-hidden="true">
@@ -82,6 +86,7 @@
       </nav>
     </aside>
 
+    <!-- Tarjeta flotante con datos del perfil -->
     <aside class="floating-card" id="floatingCard" aria-hidden="false">
       <div class="fp-avatar"> 
         <img src="imagenes_yo/images.jpg" alt="Alfonso" onerror="this.style.display='none'; this.parentNode.querySelector('.fallback').style.display='flex'" />  <!-- Circulo pequeño -->
@@ -94,6 +99,7 @@
     </aside>
 
     <main>
+      <!-- Sección principal (hero) -->
       <section id="HOME" class="hero">
         <div class="hero-inner">
           <div class="hero-left">
@@ -101,17 +107,18 @@
             <p class="hero-sub"><span id="typed"></span></p>
             <div class="hero-ctas">
               <!-- Social Media Icons -->
-              <a class="social-icon" href="mailto:alfonso.chavarin@hotmail.com" title="Email" aria-label="Enviar email">
+              <a class="social-icon email" href="mailto:alfonso.chavarin@hotmail.com" title="Email" aria-label="Enviar email">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M3 8l9 6 9-6M3 8v10c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M3 8l9 6 9-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </a>
-              <a class="social-icon" href="https://www.linkedin.com/in/alfonso-chavarin/" target="_blank" title="LinkedIn" aria-label="LinkedIn">
+              <a class="social-icon linkedin" href="https://www.linkedin.com/in/alfonso-chavarin/" target="_blank" title="LinkedIn" aria-label="LinkedIn">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
                 </svg>
               </a>
-              <a class="social-icon" href="https://github.com/AlfonsoCha1?tab=repositories" target="_blank" title="GitHub" aria-label="GitHub">
+              <a class="social-icon github" href="https://github.com/AlfonsoCha1?tab=repositories" target="_blank" title="GitHub" aria-label="GitHub">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.868-.013-1.703-2.782.603-3.369-1.343-3.369-1.343-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.545 2.914 1.186.092-.923.35-1.545.636-1.9-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
                 </svg>
@@ -149,7 +156,8 @@
         </div>
       </section>
 
-       <section id="ABOUT Me" class="section">
+      <!-- Sección Sobre mí -->
+      <section id="ABOUT Me" class="section">
         <div class="container">
           <div class="section-card">
             <h2>About Me</h2>
@@ -195,6 +203,7 @@
         </div>
       </section>
 
+      <!-- Sección de tecnologías (My Stack) -->
       <!-- Stack section (My Stack) -->
       <section id="Stack" class="section stack-section">
         <div class="container">
@@ -250,6 +259,7 @@
         </div>
       </section>
 
+      <!-- Sección de experiencia profesional -->
       <!-- Experience section -->
       <section id="EXPERIENCE" class="section experience-section">
         <div class="container">
@@ -346,6 +356,7 @@
         </div>
       </section>
 
+      <!-- Sección de diplomas y certificados -->
       <!-- Sección de Diplomas y Certificados -->
       <section id="Diplomas and Certificates" class="section">
         <div class="container">
@@ -634,6 +645,7 @@
       </section>
 
 
+      <!-- Sección de proyectos con carrusel -->
       <section id="PROJECTS" class="section">
         <div class="container">
           <h2>Proyects</h2>
@@ -646,7 +658,7 @@
               <div class="card carousel-project" data-project="4" style="--index: 3;--color-card: 252, 142, 142;"><div class="img">ESCUELA</div></div>
               <div class="card carousel-project" data-project="5" style="--index: 4;--color-card: 252, 142, 239;"><div class="img">SUMA</div></div>
               <div class="card carousel-project" data-project="6" style="--index: 5;--color-card: 204, 142, 252;"><div class="img">SMUCKY</div></div>
-              <div class="card carousel-project" data-project="7" style="--index: 6;--color-card: 142, 202, 252;"><div class="img">P7</div></div>
+              <div class="card carousel-project" data-project="7" style="--index: 6;--color-card: 142, 202, 252;"><div class="img">PORTAFOLIO</div></div>
               <div class="card carousel-project" data-project="8" style="--index: 7;--color-card: 173, 255, 47;"><div class="img">P8</div></div>
               <div class="card carousel-project" data-project="9" style="--index: 8;--color-card: 255, 165, 0;"><div class="img">P9</div></div>
               <div class="card carousel-project" data-project="10" style="--index: 9;--color-card: 64, 224, 208;"><div class="img">P10</div></div>
@@ -665,6 +677,7 @@
         </div>
       </section>
 
+      <!-- Sección de contacto y formulario -->
       <section id="CONTACT" class="section contact">
         <div class="container">
           <h2>Contact</h2>
@@ -940,6 +953,7 @@
       </section>
     </main>
 
+    <!-- Pie de página con redes y badges -->
     <!-- Footer -->
     <footer class="site-footer">
       <div class="footer-container">
@@ -954,22 +968,22 @@
         <div class="footer-center">
           <h4 class="footer-section-title">Conecta Conmigo</h4>
           <div class="footer-socials">
-            <a href="https://linkedin.com/in/alfonso-chavarin" class="footer-social-link" title="LinkedIn" target="_blank">
+            <a href="https://linkedin.com/in/alfonso-chavarin" class="footer-social-link linkedin" title="LinkedIn" target="_blank">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
               </svg>
             </a>
-            <a href="#" class="footer-social-link" title="X (Coming Soon)" onclick="return false;">
+            <a href="#" class="footer-social-link x" title="X (Coming Soon)" onclick="return false;">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.6l-5.17-6.763-5.91 6.763h-3.308l7.73-8.835L2.669 2.25h6.588l4.681 6.15L17.293 2.25h.951zm-1.97 17.05h1.84L5.969 3.75H4.049l12.225 15.55z"/>
               </svg>
             </a>
-            <a href="https://github.com/AlfonsoCha1" class="footer-social-link" title="GitHub" target="_blank">
+            <a href="https://github.com/AlfonsoCha1" class="footer-social-link github" title="GitHub" target="_blank">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
               </svg>
             </a>
-            <a href="mailto:alfonso.chavarin@hotmail.com" class="footer-social-link" title="Email">
+            <a href="mailto:alfonso.chavarin@hotmail.com" class="footer-social-link email" title="Email">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
                 <rect x="2" y="4" width="20" height="16" rx="2"></rect>
                 <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
@@ -984,6 +998,7 @@
           <div class="footer-badges">
             <span class="footer-badge">Full-Stack Developer</span>
             <span class="footer-badge">Product Owner</span>
+            <span class="footer-badge">Administration Projects</span>
           </div>
         </div>
       </div>

@@ -1,28 +1,13 @@
 // Portfolio interactions: typing, button ripple, modal, tilt, scroll-follow and scrollspy
+// Interacciones del portafolio: tipeo, efecto ripple, modal, tilt, seguimiento de scroll y scrollspy
 (function(){
-  // Typed text (simple)
-  const phrases = [
-    'Desarrollo web moderno.',
-    'Interfaces responsivas.',
-    'Microinteracciones y rendimiento.'
-  ];
+  // Typed text disabled
+  // Texto tipeado desactivado
   const typedEl = document.getElementById('typed');
-  let tIndex = 0, cIndex = 0, forward = true;
-  function tick(){
-    const text = phrases[tIndex];
-    typedEl.textContent = text.slice(0, cIndex);
-    if(forward){
-      cIndex++;
-      if(cIndex>text.length){ forward=false; setTimeout(tick, 900); return; }
-    } else {
-      cIndex--;
-      if(cIndex<0){ forward=true; tIndex=(tIndex+1)%phrases.length; }
-    }
-    setTimeout(tick, forward?80:24);
-  }
-  if(typedEl) tick();
+  if(typedEl) typedEl.textContent = '';
 
   // Smooth scrolling for buttons and nav
+  // Scroll suave para botones y navegación
   document.querySelectorAll('[data-target]').forEach(btn=>{
     btn.addEventListener('click', e=>{
       const sel = btn.getAttribute('data-target');
@@ -32,6 +17,7 @@
   });
 
   // Ripple effect for .btn
+  // Efecto ripple para .btn
   document.addEventListener('click', function(e){
     const btn = e.target.closest('.btn');
     if(!btn) return;
@@ -47,6 +33,7 @@
   });
 
   // Modal for projects
+  // Modal para proyectos
   const modal = document.getElementById('projectModal');
   const modalTitle = document.getElementById('modalTitle');
   const modalDesc = document.getElementById('modalDesc');
@@ -61,7 +48,7 @@
     4:{ title:'E-commerce Store', desc:'Plataforma de tienda online con carrito de compras, sistema de pago integrado y gestión de inventario.', color:'252, 142, 142', link:'https://github.com/AlfonsoCha1/ESCUELA' },
     5:{ title:'Dashboard Analytics', desc:'Panel de análisis en tiempo real con gráficos interactivos, mapas de calor y reportes personalizados.', color:'252, 142, 239', link:'https://github.com/AlfonsoCha1/SUMA' },
     6:{ title:'Chat Application', desc:'Aplicación de mensajería instantánea con soporte para grupos, notificaciones y sincronización en vivo.', color:'204, 142, 252', link:'https://github.com/AlfonsoCha1/Smucky_By_CHAVAMON' },
-    7:{ title:'Portfolio Personal', desc:'Sitio web personal con galería de proyectos, blog integrado y formulario de contacto optimizado.', color:'142, 202, 252', link:'#' },
+    7:{ title:'Portafolio Alfonso', desc:'Portafolio personal con proyectos, certificados y contacto.', color:'142, 202, 252', link:'https://github.com/AlfonsoCha1/portafolio-alfonso' },
     8:{ title:'Task Manager', desc:'Gestor de tareas colaborativo con asignación de roles, cronograma Gantt y seguimiento de progreso.', color:'173, 255, 47', link:'#' },
     9:{ title:'Video Streaming', desc:'Plataforma de streaming de video con reproductor personalizado, recomendaciones IA y comentarios en vivo.', color:'255, 165, 0', link:'#' },
     10:{ title:'Social Network', desc:'Red social completa con perfiles, muro de actividades, notificaciones y sistema de mensajes privados.', color:'64, 224, 208', link:'#' },
@@ -78,10 +65,11 @@
   };
 
   // Carousel project cards click handler
+  // Click en tarjetas del carrusel de proyectos
   document.querySelectorAll('.carousel-project').forEach(card=>{
     card.addEventListener('click', function(){
       const projectId = this.getAttribute('data-project');
-      if(Number(projectId) >= 7) return;
+      if(Number(projectId) >= 8) return;
       const p = projects[projectId];
       if(!p) return;
       modalTitle.textContent = p.title;
@@ -94,6 +82,7 @@
     });
   });
 
+  // (The Look Me buttons open the PDF in a new tab by default)
   // (Los botones Look Me abren el PDF en nueva pestaña por defecto)
 
   document.querySelectorAll('.proj-link').forEach(a=>{
@@ -115,6 +104,7 @@
 
 
   // Tilt for project cards
+  // Inclinación (tilt) para tarjetas de proyectos
   document.querySelectorAll('.project-card').forEach(card=>{
     card.addEventListener('mousemove', e=>{
       const rect = card.getBoundingClientRect();
@@ -128,30 +118,36 @@
   });
 
   // Escape should close project modal
+  // Escape debe cerrar el modal de proyectos
   document.addEventListener('keydown', e=>{
     if(e.key === 'Escape'){
       modal && modal.setAttribute('aria-hidden','true');
     }
   });
 
+  // Global controls to expand/collapse both lists (certificates and diplomas)
   // Controles globales para maximizar/minimizar ambos listados (certificados y diplomas)
   const expandAllBtn = document.getElementById('docs-expand-all');
   const collapseAllBtn = document.getElementById('docs-collapse-all');
   const allGrids = document.querySelectorAll('.docs-column .docs-grid');
 
+  // Expand all: remove the 'collapsed' class from each grid
   // Expandir todas: quitar la clase 'collapsed' de cada grid
   expandAllBtn && expandAllBtn.addEventListener('click', ()=>{
     allGrids.forEach(g=> g.classList.remove('collapsed'));
   });
 
+  // Collapse all: add the 'collapsed' class to show only 3 cards
   // Colapsar todas: añadir la clase 'collapsed' para mostrar solo 3 tarjetas
   collapseAllBtn && collapseAllBtn.addEventListener('click', ()=>{
     allGrids.forEach(g=> g.classList.add('collapsed'));
+    // optional: smooth scroll to the documents section
     // opcional: desplazar suavemente hacia la sección de documentos
     const docsSection = document.querySelector('#Diplomas\\ and\\ Certificates');
     if(docsSection) docsSection.scrollIntoView({behavior:'smooth',block:'start'});
   });
 
+  // Compatibility: if individual '.docs-toggle' buttons exist, handle them too
   // Compatibilidad: si existen botones individuales con la clase '.docs-toggle', los manejamos también
   document.querySelectorAll('.docs-toggle').forEach(btn=>{
     btn.addEventListener('click', ()=>{
@@ -165,6 +161,7 @@
   });
 
   // Scrollspy: highlight nav links (both header and sidebar)
+  // Scrollspy: resaltar links de navegación (header y sidebar)
   const sections = document.querySelectorAll('main section');
   const navLinks = document.querySelectorAll('.nav-link, .sidebar-link');
   
@@ -192,6 +189,7 @@
   sections.forEach(s=> scrollObs.observe(s));
 
   // Floating card follows scroll (adjust top position) on larger screens
+  // Tarjeta flotante sigue el scroll (ajusta top) en pantallas grandes
   const floating = document.getElementById('floatingCard');
   if(floating){
     let lastScroll = window.pageYOffset;
@@ -201,6 +199,7 @@
     }, {passive:true});
   }
 
+  // Show floating card only in HOME
   // Mostrar tarjeta flotante solo en HOME
   const homeSection = document.getElementById('HOME');
   if(floating && homeSection){
@@ -215,6 +214,7 @@
   }
 
   // Sidebar Menu toggle
+  // Toggle del menú lateral
   const menuToggle = document.getElementById('menuToggle');
   const navToggle = document.getElementById('navToggle');
   const sidebarMenu = document.getElementById('sidebarMenu');
@@ -223,6 +223,7 @@
   const sidebarLinks = document.querySelectorAll('.sidebar-link');
 
   // Function to toggle sidebar
+  // Función para alternar el sidebar
   function toggleSidebar() {
     const isHidden = sidebarMenu.getAttribute('aria-hidden') === 'true';
     sidebarMenu.setAttribute('aria-hidden', !isHidden);
@@ -230,16 +231,19 @@
   }
 
   // Toggle on menu button or nav toggle click
+  // Toggle al hacer clic en menú o nav toggle
   menuToggle && menuToggle.addEventListener('click', toggleSidebar);
   navToggle && navToggle.addEventListener('click', toggleSidebar);
 
   // Close sidebar when close button clicked
+  // Cerrar sidebar al hacer clic en cerrar
   sidebarClose && sidebarClose.addEventListener('click', ()=>{
     sidebarMenu.setAttribute('aria-hidden', 'true');
     sidebarOverlay.classList.remove('active');
   });
 
   // Close sidebar when a link is clicked
+  // Cerrar sidebar al hacer clic en un enlace
   sidebarLinks.forEach(link=>{
     link.addEventListener('click', ()=>{
       sidebarMenu.setAttribute('aria-hidden', 'true');
@@ -248,12 +252,14 @@
   });
 
   // Close sidebar when overlay is clicked
+  // Cerrar sidebar al hacer clic en el overlay
   sidebarOverlay && sidebarOverlay.addEventListener('click', ()=>{
     sidebarMenu.setAttribute('aria-hidden', 'true');
     sidebarOverlay.classList.remove('active');
   });
 
   // Close sidebar on ESC key
+  // Cerrar sidebar con tecla ESC
   document.addEventListener('keydown', (e)=>{
     if(e.key === 'Escape' && sidebarMenu.getAttribute('aria-hidden') === 'false'){
       sidebarMenu.setAttribute('aria-hidden', 'true');
@@ -262,6 +268,7 @@
   });
 
   // Mobile nav toggle - for old nav display
+  // Toggle móvil del nav (versión antigua)
   const oldNavToggle = document.querySelector('.nav-toggle');
   const nav = document.querySelector('.nav');
   oldNavToggle && oldNavToggle.addEventListener('click', ()=>{
@@ -269,6 +276,7 @@
   });
 
   // Optional: animate CV download button on click (small pulse)
+  // Opcional: animar botón de CV al hacer clic (pulso pequeño)
   document.querySelectorAll('.cv-download, .cv-inline').forEach(el=>{
     el.addEventListener('click', ()=>{
       el.animate([{transform:'scale(1)'},{transform:'scale(0.98)'},{transform:'scale(1)'}],{duration:220});
@@ -276,6 +284,7 @@
   });
 
   // Background switch (purple home/about, red from stack to contact)
+  // Cambio de fondo (morado en home/about, rojo de stack a contact)
   const bgSections = [
     { id: 'HOME', red: false, redAnim: false, video: 'Pikachu.mp4', showVideo: true },
     { id: 'ABOUT Me', red: false, redAnim: false, video: 'Charizard.mp4', showVideo: true },
@@ -335,6 +344,7 @@
     return true;
   }
 
+  // Add listeners to section buttons with video
   // Agregar listeners a botones de secciones con video
   document.querySelectorAll('a[href="#HOME"], a[href="#ABOUT Me"], a[href="#Diplomas and Certificates"], a[href="#PROJECTS"]').forEach(btn => {
     btn.addEventListener('click', (e)=>{
@@ -369,6 +379,7 @@
       if(config.redAnim) document.body.classList.add('is-red-anim');
       else document.body.classList.remove('is-red-anim');
       
+      // Videos only play on menu button click, not on scroll
       // Videos solo se reproducen al hacer clic en botones del menú, no en scroll
     }, 100);
   }, { threshold: [0.25, 0.5, 0.75], rootMargin: '0px 0px -40% 0px' });
@@ -379,6 +390,7 @@
   });
 
   // Experience scroll indicator progress
+  // Progreso del indicador de Experience
   const expSection = document.getElementById('EXPERIENCE');
   const expIndicator = expSection && expSection.querySelector('.exp-scroll');
   const expTrack = expIndicator && expIndicator.querySelector('.exp-scroll-track');
@@ -408,6 +420,7 @@
     expFill.style.height = fillHeight + 'px';
     expDot.style.top = fillHeight + 'px';
 
+    // Indicator color based on the most visible card
     // Color del indicador según el cuadro más visible
     const cards = expSection.querySelectorAll('.experience-item');
     let bestCard = null;

@@ -91,6 +91,7 @@ body.is-red{
 }
 
 /* Pokemon Video Container */
+/* Contenedor de video Pokémon */
 .pokemon-video-container{
   position:fixed;
   inset:0;
@@ -142,6 +143,7 @@ body.is-red{
 }
 
 /* Background FX */
+/* Efectos de fondo */
 .bg{
   position:fixed;
   inset:0;
@@ -233,6 +235,7 @@ body.is-red-anim .orb--red{
 }
 
 /* Content layering above background */
+/* Capa de contenido sobre el fondo */
 .site-header,
 main,
 .floating-card{
@@ -247,7 +250,8 @@ main,
 .nav-link.active,.nav-link:hover{color:#22f7c5;background:rgba(34,247,197,0.1)}
 .nav-toggle{display:none;background:transparent;border:0;color:var(--muted);font-size:20px}
 
-/* Sidebar Menu Styles */
+/* Sidebar menu styles */
+/* Estilos del menú lateral */
 .sidebar-overlay {
   position: fixed;
   top: 0;
@@ -435,6 +439,7 @@ main,
 
 .cv-download{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border-radius:10px;background:linear-gradient(90deg,#fff,#f3f4f6);color:#04233a;font-weight:700;text-decoration:none}
 .cv-download svg{opacity:0.95}
+.cv-download:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(3,16,34,0.2)}
 .cv-download:active{transform:translateY(1px)}
 .cv-download span{font-size:14px}
 
@@ -470,16 +475,19 @@ main,
 .proj-link{display:inline-flex;margin-top:auto;width:100%;align-items:center;justify-content:center;color:#04233a;background:linear-gradient(90deg,#fff,#f3f4f6);padding:12px 16px;border-radius:10px;font-weight:700;font-size:16px;transition:transform .18s ease, box-shadow .18s ease}
 .proj-link:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(3,16,34,0.35)}
 
-/* Center the projects section title */
+/* Center the Projects title */
+/* Centrar el título de Proyectos */
 #projects .container h2{ text-align:center; margin-bottom:18px; font-size:36px }
 
-/* Center the contact section title */
+/* Center the Contact title */
+/* Centrar el título de Contacto */
 #contact .container h2{ text-align:center; margin-bottom:18px; font-size:36px }
 
 /* Center and enlarge the About section title */
 #about .container h2{ text-align:center; margin-bottom:18px; font-size:36px }
 
 /* Make About, Stack, Experience, Projects, Contact titles larger + bold */
+/* Hacer títulos (About, Stack, Experience, Projects, Contact) más grandes y en negritas */
 /* Base box style for section titles */
 #ABOUT\ Me h2,
 #Stack h2,
@@ -580,18 +588,24 @@ main,
 .docs-wrap{display:flex;gap:24px;flex-wrap:wrap;margin-top:6px}
 .docs-column{flex:1;min-width:260px}
 .docs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px} 
+/* Hide all cards after the 3rd when collapsed */
 /* Oculta todas las tarjetas a partir de la 4 cuando está colapsado */
 .docs-grid.collapsed .doc-card:nth-child(n+4){display:none} 
+/* Needed for the gradient pseudo-element */
 /* Necesario para el pseudo-elemento degradado */
 .docs-grid.collapsed{position:relative} 
+/* Remove bottom gradient to avoid dark lines */
 /* Quitar degradado inferior para evitar líneas oscuras */
 .docs-grid.collapsed::after{content:none} 
+/* Vertically center buttons between columns */
 /* Botones centrados verticalmente entre columnas */
 .docs-controls{display:flex;flex-direction:column;gap:8px;align-items:center;justify-content:flex-start;margin:6px 8px 0} 
+/* Styles for maximize/minimize button (now not absolute) */
 /* Estilos para botón de maximizar/minimizar (ahora no absolute) */
 .docs-toggle{position:static;right:auto;top:auto;background:linear-gradient(90deg,#fff,#f3f4f6);color:#031022;padding:6px 10px;border-radius:8px;border:0;font-weight:700;cursor:pointer;box-shadow:0 8px 20px rgba(2,6,23,0.18)}
 .docs-toggle:focus{outline:2px solid rgba(110,231,183,0.16)}
 .docs-column{position:relative}
+/* Styles for document iframe */
 /* estilos para iframe de documento */
 .doc-embed-wrap iframe{width:100%;height:70vh;border-radius:8px}
 .doc-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px;border-radius:14px;transition:transform .35s ease,box-shadow .35s ease;min-height:220px}
@@ -605,6 +619,7 @@ main,
 .doc-link:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(3,16,34,0.35)}
 
 /* From Uiverse.io by Yaya12085 */
+/* De Uiverse.io por Yaya12085 */
 .doc-link.button{
   width: fit-content;
   display: flex;
@@ -640,6 +655,7 @@ main,
   transition: .3s ease;
 }
 
+/* Hide floating card outside HOME */
 /* Ocultar tarjeta flotante fuera de HOME */
 .floating-card.is-hidden{opacity:0;pointer-events:none;transform:translateY(-12px);}
 
@@ -691,6 +707,7 @@ main,
 }
 
 /* Stack section styles (cards similar to attachment) */
+/* Estilos de la sección Stack (tarjetas similares al adjunto) */
 .stack-section .lead{
   max-width:900px;
   margin:0 auto 18px;
@@ -727,6 +744,7 @@ main,
 .stack-text p{margin:4px 0 0;color:var(--muted)}
 
 /* Shared section card (About/Stack/Experience) */
+/* Tarjeta compartida de sección (About/Stack/Experience) */
 .section-card{
   background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
   border:1px solid rgba(110,231,183,0.12);
@@ -815,6 +833,7 @@ main,
 .section-card .lead{max-width:900px;margin:0 auto 18px;text-align:center}
 
 /* Experience section styles */
+/* Estilos de la sección Experience */
 .experience-section{
   padding-bottom:40px;
 }
@@ -912,14 +931,16 @@ main,
   box-shadow:0 6px 18px rgba(59, 130, 246, 0.25);
 }
 
-/* Tools small section */
+/* Small Tools section */
+/* Sección pequeña de Tools */
 #tools .lead{max-width:880px;margin:0 auto;text-align:center}
 
 
 .contact-list{list-style:none;padding:0;color:var(--muted)}
 .contact-list a{color:var(--accent)}
 
-/* Neon box styling for contact section */
+/* Neon box style for Contact section */
+/* Estilo de caja neón para la sección Contact */
 .neon-box{
   border:3px solid;
   border-image: linear-gradient(90deg, #00d4ff, #ff00ff, #00d4ff) 1;
@@ -1020,6 +1041,10 @@ main,
   text-decoration: none;
   border: 1px solid rgba(34, 247, 197, 0.2);
 }
+.footer-social-link.email{color:#22f7c5;border-color:rgba(34, 247, 197, 0.2);background:rgba(34, 247, 197, 0.08)}
+.footer-social-link.linkedin{color:#0ea5e9;border-color:rgba(14,165,233,0.35);background:rgba(14,165,233,0.08)}
+.footer-social-link.github{color:#0f172a;border-color:rgba(226,232,240,0.9);background:#ffffff}
+.footer-social-link.x{color:#e2e8f0;border-color:rgba(148,163,184,0.35);background:rgba(148,163,184,0.08)}
 
 .footer-social-link:hover {
   background: rgba(34, 247, 197, 0.15);
@@ -1028,6 +1053,10 @@ main,
   transform: translateY(-4px);
   box-shadow: 0 8px 24px rgba(34, 247, 197, 0.2);
 }
+.footer-social-link.email:hover{box-shadow:0 8px 24px rgba(0,120,212,0.25);border-color:#0078d4}
+.footer-social-link.linkedin:hover{box-shadow:0 8px 24px rgba(14,165,233,0.25);border-color:#0ea5e9}
+.footer-social-link.github:hover{box-shadow:0 8px 24px rgba(34,197,94,0.35);border-color:#22c55e}
+.footer-social-link.x:hover{box-shadow:0 8px 24px rgba(148,163,184,0.25);border-color:#e2e8f0}
 
 .footer-right {
   text-align: right;
@@ -1402,6 +1431,7 @@ body{
 .hero:before{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(2,6,23,0.45), rgba(2,6,23,0.55));z-index:1;pointer-events:none}
 
 }
+/* Iconos sociales */
 /* Social Icons */
 .social-icon{
   display:inline-flex;
@@ -1416,12 +1446,18 @@ body{
   transition:all .3s ease;
   text-decoration:none;
 }
+.social-icon.email{color:var(--accent);border-color:rgba(110,231,183,0.2);background:linear-gradient(135deg, rgba(110,231,183,0.1), rgba(110,231,183,0.05));}
+.social-icon.linkedin{color:#0ea5e9;border-color:rgba(14,165,233,0.35);background:linear-gradient(135deg, rgba(14,165,233,0.2), rgba(30,64,175,0.08));}
+.social-icon.github{color:#0f172a;border-color:rgba(226,232,240,0.9);background:linear-gradient(135deg, #ffffff, #f1f5f9);}
 .social-icon:hover{
   transform:translateY(-6px);
   box-shadow:0 12px 30px rgba(110,231,183,0.15);
   background:linear-gradient(135deg, rgba(110,231,183,0.2), rgba(110,231,183,0.1));
   border-color:rgba(110,231,183,0.4);
 }
+.social-icon.email:hover{box-shadow:0 12px 30px rgba(110,231,183,0.15);border-color:rgba(110,231,183,0.4)}
+.social-icon.linkedin:hover{box-shadow:0 12px 30px rgba(14,165,233,0.25);border-color:rgba(14,165,233,0.6)}
+.social-icon.github:hover{box-shadow:0 12px 30px rgba(34,197,94,0.35);border-color:rgba(34,197,94,0.7)}
 .social-icon:active{
   transform:translateY(-2px)
 }
@@ -1431,6 +1467,7 @@ body{
 }
 
 /* From Uiverse.io by ilkhoeri - 3D Rotating Carousel */
+/* De Uiverse.io por ilkhoeri - Carrusel 3D giratorio */
 .wrapper {
   width: 100%;
   height: 460px;
@@ -1512,6 +1549,7 @@ body{
 
 
 /* From Uiverse.io by JkHuger - Astronaut Animation */
+/* De Uiverse.io por JkHuger - Animación de astronauta */
 @keyframes snow {
   0% {
     opacity: 0;
@@ -1840,6 +1878,7 @@ body{
 }
 
 /* From Uiverse.io by StealthWorm */
+/* De Uiverse.io por StealthWorm */
 .space-btn {
   display: flex;
   justify-content: center;
@@ -2014,6 +2053,7 @@ body{
 }
 
 /* From Uiverse.io by mobinkakei */
+/* De Uiverse.io por mobinkakei */
 .cta {
   display: flex;
   padding: 8px 20px;
@@ -2098,6 +2138,7 @@ body{
 }
 
 /* From Uiverse.io by Subaashbala */
+/* De Uiverse.io por Subaashbala */
 .minimize-btn {
   display: flex;
   justify-content: space-around;
@@ -2200,6 +2241,7 @@ body{
 }
 
 /* From Uiverse.io by Javierrocadev */
+/* De Uiverse.io por Javierrocadev */
 .minimize-btn-2 {
   position: relative;
   height: 56px;
@@ -2258,6 +2300,7 @@ body{
 }
 
 /* From Uiverse.io by gagan-gv */
+/* De Uiverse.io por gagan-gv */
 
 
 .menu-btn {
@@ -2376,6 +2419,7 @@ body{
 }
 
 /* From Uiverse.io by KhelVers (adapted) */
+/* De Uiverse.io por KhelVers (adaptado) */
 #Container {
   display: flex;
   flex-direction: column;
@@ -2513,6 +2557,7 @@ body{
 }
 
 /* Center section titles */
+/* Centrar títulos de sección */
 [id="Diplomas and Certificates"] h2,
 #PROJECTS h2 {
   text-align: center;
