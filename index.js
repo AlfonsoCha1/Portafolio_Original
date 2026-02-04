@@ -81,6 +81,7 @@
   document.querySelectorAll('.carousel-project').forEach(card=>{
     card.addEventListener('click', function(){
       const projectId = this.getAttribute('data-project');
+      if(Number(projectId) >= 7) return;
       const p = projects[projectId];
       if(!p) return;
       modalTitle.textContent = p.title;
