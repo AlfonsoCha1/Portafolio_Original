@@ -135,4 +135,8 @@
 @keyframes loader-title-fade {
   0% { opacity: 0; transform: translateY(24px); }
   100% { opacity: 1; transform: translateY(0); }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 324621a43678b8eee0217e143c8253246fe355c3

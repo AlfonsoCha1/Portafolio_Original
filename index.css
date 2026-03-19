@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* From Uiverse.io by Sergestra - Botón idioma */
 #lang-toggle {
   outline: 0;
@@ -422,6 +423,8 @@
     max-width: 98vw;
   }
 }
+=======
+>>>>>>> 324621a43678b8eee0217e143c8253246fe355c3
 /* --- Ajuste para que los círculos de experiencia y proyectos no se salgan del cuadro --- */
 .about-circles-row-skills {
   flex-wrap: wrap;
@@ -2056,6 +2059,7 @@ main,
   z-index: 1;
 }
 
+<<<<<<< HEAD
 .site-header{position:fixed;left:0;right:0;top:0;height:64px;background:rgba(5, 7, 20, 0.92);backdrop-filter:blur(8px);display:flex;align-items:center;gap:24px;justify-content:flex-start;padding:0 24px;z-index:100;box-shadow:0 8px 24px rgba(2,6,23,0.6)}
 .brand{font-weight:900;font-size:22px;}
 .nav{display:flex;gap:18px;align-items:center;flex-wrap:nowrap;white-space:nowrap;min-width:0;overflow-x:auto;}
@@ -2080,6 +2084,11 @@ main,
 .menu-btn {
   margin-left: auto;
 }
+=======
+.site-header{position:fixed;left:0;right:0;top:0;height:64px;background:rgba(5, 7, 20, 0.92);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:0 24px;z-index:100;box-shadow:0 8px 24px rgba(2,6,23,0.6)}
+.brand{font-weight:900;font-size:22px;}
+.nav{display:flex;gap:18px;align-items:center;flex-wrap:nowrap;white-space:nowrap;min-width:0;overflow-x:auto;}
+>>>>>>> 324621a43678b8eee0217e143c8253246fe355c3
 .nav-link{color:#e6eef8;text-decoration:none;padding:8px 10px;border-radius:8px;font-size:24px;line-height:1.2;font-weight:800;white-space:nowrap;}
 .nav-link.active,.nav-link:hover{color:#22f7c5;background:rgba(34,247,197,0.1)}
 .nav-toggle{display:none;background:transparent;border:0;color:var(--muted);font-size:20px}
