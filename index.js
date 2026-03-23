@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 (function(){
   // Traducción básica ES/EN
   const translations = {
@@ -155,10 +154,7 @@
     }
   });
 })();
-// ...existing code...
-=======
->>>>>>> 324621a43678b8eee0217e143c8253246fe355c3
-// Portfolio interactions: typing, button ripple, modal, tilt, scroll-follow and scrollspy
+
 // Interacciones del portafolio: tipeo, efecto ripple, modal, tilt, seguimiento de scroll y scrollspy
 (function(){
   // Typed text disabled
